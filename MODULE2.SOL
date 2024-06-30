@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Token {
+    mapping(address => uint256) private holdings;
+
+    event Movement(address indexed sender, address indexed receiver, uint256 amount);
+
+    function increaseHoldings(uint256 amount) public {
+        holdings[msg.sender] += amount;
+        emit Movement(address(0), msg.sender, amount);
+    }
+
+    function decreaseHoldings(uint256 amount) public {
+        require(holdings[msg.sender] >= amount, "Not enough funds");
+        holdings[msg.sender] -= amount;
+        emit Movement(msg.sender, address(0), amount);
+    }
+
+    function viewHoldings(address owner) public view returns (uint256) {
+        return holdings[owner];
+    }
+}
