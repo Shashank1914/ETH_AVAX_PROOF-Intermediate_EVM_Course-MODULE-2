@@ -53,5 +53,5 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Contact
 
-For any questions or inquiries, please contact [your_email@example.com].
+For any questions or inquiries, please contact [Shaanreiforyou@gmail.com].
 
